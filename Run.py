@@ -5,7 +5,7 @@ import time
 import unittest
 import HTMLTestRunner
 import testlink
-
+from test_case.test_epc import *
 test_dir = r"C:\Users\admin\PycharmProjects\test_project\test_case"
 report_dir = r"C:\Users\admin\PycharmProjects\test_project\report\Autotest_"
 testlink_url = "http://192.168.5.9:9080/testlink/lib/api/xmlrpc/v1/xmlrpc.php"
@@ -27,11 +27,10 @@ def creatsuite():
 
 def FillResultToTestLink(test_result, test_case_id):  #qsq 10.27
     myTestLink = testlink.TestlinkAPIClient(testlink_url, testlink_devkey)
-    for test_case_ID in test_case_id:
-        newResult = myTestLink.reportTCResult(test_case_ID, test_plan_id , buidname,
-                                              test_result, "Autotest", bugid='',
-                                              user=username)
-        print("reportTCResult", newResult)
+    newResult = myTestLink.reportTCResult(test_case_id, test_plan_id , buidname,
+                                          test_result, "Autotest", bugid='',
+                                          user=username)
+    print("reportTCResult", newResult)
         
 if __name__=='__main__':
     alltestnames = creatsuite()
@@ -58,3 +57,4 @@ if __name__=='__main__':
             FillResultToTestLink("f", fail_case_id)
         for success_case_id in all_case_id:
             FillResultToTestLink("p", success_case_id)
+
