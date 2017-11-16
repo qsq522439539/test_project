@@ -5,15 +5,16 @@ import time
 import unittest
 import HTMLTestRunner
 import testlink
+from common import *
 from test_case.test_epc import *
-test_dir = r"C:\Users\admin\PycharmProjects\test_project\test_case"
-report_dir = r"C:\Users\admin\PycharmProjects\test_project\report\Autotest_"
-testlink_url = "http://192.168.5.9:9080/testlink/lib/api/xmlrpc/v1/xmlrpc.php"
-testlink_devkey = "f1d400e885496d59fb0ac5cc9f6f506a"
-test_plan_id = ""
-buidname = ""
-username = ""
-debug = 0
+test_dir = getXmlParameter("test_dir")
+report_dir = getXmlParameter("report_dir")
+testlink_url = getXmlParameter("testlink_url")
+testlink_devkey = getXmlParameter("testlink_devkey")
+test_plan_id = getXmlParameter("test_plan_id")
+buidname = getXmlParameter("buidname")
+username = getXmlParameter("username")
+debug = int(getXmlParameter("debug"))
 
 def creatsuite():
     testunit = unittest.TestSuite()

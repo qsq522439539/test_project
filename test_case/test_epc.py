@@ -10,6 +10,8 @@ from common import *
 
 sys.path.append("..")
 
+api = "http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi"
+
 class TestEpcApi(unittest.TestCase):
 	
 	def setUp(self):
@@ -31,7 +33,7 @@ class TestEpcApi(unittest.TestCase):
 					<epcOmcPCRF_SPR_PCC_RULE_Req>
 					<PROCESS_TYPE>qa</PROCESS_TYPE>
 					</epcOmcPCRF_SPR_PCC_RULE_Req>'''
-		r = str(requests.post("http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi", data=xmldata))
+		r = str(requests.post(api, data=xmldata))
 		status = re.findall(r"Response \[(\d{3})\]",r)[0]
 		self.assertEqual(status,"200")
 		
@@ -56,7 +58,7 @@ class TestEpcApi(unittest.TestCase):
 		<PF_LIST>200</PF_LIST>
 	</ITEM>
 </epcOmcPCRF_SPR_PCC_RULE_Req>'''
-		r = str(requests.post("http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi", data=xmldata))
+		r = str(requests.post(api, data=xmldata))
 		status = re.findall(r"Response \[(\d{3})\]", r)[0]
 		self.assertEqual(status, "200")
 		mysqldata = do_clicmd(self.ssh_epc_ip, self.ssh_epc_user, self.ssh_epc_passwd,
@@ -85,7 +87,7 @@ class TestEpcApi(unittest.TestCase):
 				<PF_LIST>200</PF_LIST>
 			</ITEM>
 		</epcOmcPCRF_SPR_PCC_RULE_Req>'''
-		r = str(requests.post("http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi", data=xmldata))
+		r = str(requests.post(api, data=xmldata))
 		status = re.findall(r"Response \[(\d{3})\]", r)[0]
 		self.assertEqual(status, "200")
 		xmldata2 = '''<?xml version="1.0"?>
@@ -106,7 +108,7 @@ class TestEpcApi(unittest.TestCase):
 		<PF_LIST>2</PF_LIST>
 	</ITEM>
 </epcOmcPCRF_SPR_PCC_RULE_Req>'''
-		r = str(requests.post("http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi", data=xmldata2))
+		r = str(requests.post(api, data=xmldata2))
 		status = re.findall(r"Response \[(\d{3})\]", r)[0]
 		self.assertEqual(status, "200")
 		mysqldata = do_clicmd(self.ssh_epc_ip, self.ssh_epc_user, self.ssh_epc_passwd,
@@ -126,7 +128,7 @@ class TestEpcApi(unittest.TestCase):
 		<PCC_NAME>Auto</PCC_NAME>
 	</ITEM>
 </epcOmcPCRF_SPR_PCC_RULE_Req>'''
-		r = str(requests.post("http://192.168.254.121:80/epc/om/config_pcrf_spr_pcc_rule.cgi", data=xmldata))
+		r = str(requests.post(api, data=xmldata))
 		status = re.findall(r"Response \[(\d{3})\]", r)[0]
 		self.assertEqual(status, "200")
 		mysqldata = do_clicmd(self.ssh_epc_ip, self.ssh_epc_user, self.ssh_epc_passwd,

@@ -37,9 +37,3 @@ def getXmlParameter(element, xmlfile="parameters.xml"):
 	value = collection.getElementsByTagName(element)[0].childNodes[0].data
 	return value
 
-if __name__ == "__main__":
-	command = "use PCRF; select * from SPR_PCC_RULE where PCC_NAME='Auto';"
-	print do_clicmd("192.168.254.121", "root", "baicells",
-	      '''mysql -e "use PCRF; select * from SPR_PCC_RULE where PCC_NAME='Auto';"''')
-	# print type(do_clicmd("192.168.254.121", "root", "baicells",
-	#           "mysql -e 'use PCRF; select * from SPR_PCC_RULE'"))

@@ -14,4 +14,14 @@
       <ssh_epc_user>root</ssh_epc_user>
       <ssh_epc_passwd>baicells</ssh_epc_passwd>
     </epc_parameters>
+    <testlink_parameters>
+      <test_dir>C:\Users\admin\PycharmProjects\test_project\test_case</test_dir>
+      <report_dir>C:\Users\admin\PycharmProjects\test_project\report\Autotest_</report_dir>
+      <testlink_url>http://192.168.5.9:9080/testlink/lib/api/xmlrpc/v1/xmlrpc.php</testlink_url>
+      <testlink_devkey>f1d400e885496d59fb0ac5cc9f6f506a</testlink_devkey>
+      <test_plan_id> </test_plan_id>
+      <buidname> </buidname>
+      <username> </username>
+      <debug>0</debug>
+    </testlink_parameters>
 </parameters>
