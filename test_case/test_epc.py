@@ -1,6 +1,6 @@
 # coding:utf-8
 """
-基本的自动化测试脚本 basic_demo.py
+epc_SPR_PCC_RULE接口测试
 """
 import sys
 import re
