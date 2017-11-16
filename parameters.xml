@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<parameters>
+    <enb_parameters>
+      <host>192.168.254.24</host>
+      <ssh_admin_user>admin</ssh_admin_user>
+      <ssh_admin_key>admin</ssh_admin_key>
+      <ssh_root_user>root</ssh_root_user>
+      <ssh_root_key>root123</ssh_root_key>
+      <ssh_port>27149</ssh_port>
+    </enb_parameters>
+    <epc_parameters>
+      <ssh_epc_ip>192.168.254.121</ssh_epc_ip>
+      <ssh_epc_user>root</ssh_epc_user>
+      <ssh_epc_passwd>baicells</ssh_epc_passwd>
+    </epc_parameters>
+</parameters>
